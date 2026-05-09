@@ -1,42 +1,39 @@
-# sv
+# Sports Club Booking System
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A full-stack booking management application built with:
 
-## Creating a project
+- **Frontend:** [SvelteKit](https://kit.svelte.dev/?utm_source=chatgpt.com)
+- **Backend:** [Django REST Framework](https://www.django-rest-framework.org/?utm_source=chatgpt.com)
+- **Database:** [Supabase PostgreSQL](https://supabase.com/?utm_source=chatgpt.com)
 
-If you're seeing this, you've probably already done this step. Congrats!
+This project demonstrates how a modern frontend communicates with a REST API to perform CRUD operations on booking records.
 
-```sh
-# create a new project
-npx sv create my-app
-```
+---
 
-To recreate this project with the same configuration:
+## Features
 
-```sh
-# recreate this project
-npx sv@0.15.3 create --template minimal --types ts --add prettier eslint vitest="usages:unit,component" --install npm sports_club_app
-```
+- View all bookings
+- Create a booking
+- Update existing bookings
+- Delete bookings
+- API-powered frontend using `fetch()`
+- Hosted PostgreSQL database with Supabase
 
-## Developing
+---
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Tech Stack
 
-```sh
-npm run dev
+| Layer | Technology |
+|------|------|
+| Frontend | SvelteKit |
+| Backend | Django + DRF |
+| Database | Supabase (PostgreSQL) |
+| Deployment | Render / Vercel (optional) |
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+---
 
-## Building
+## Project Structure
 
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```text
+frontend/   # SvelteKit application
+backend/    # Django REST API
