@@ -3,7 +3,7 @@
     let { data } = $props(); 
 </script>
 
-<h1>My Dashboard</h1>
+<h1>Facilities</h1>
 
 <div class="grid">
     {#each data.projects as facility}
