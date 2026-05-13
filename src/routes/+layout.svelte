@@ -12,6 +12,7 @@
 	<a href="/">Home</a>
 	<a href="/facilities">Facilities</a>
 	<a href="/members">Members</a>
+	<a href="/bookings">Bookings</a>
 </nav>
 
 {@render children()}
