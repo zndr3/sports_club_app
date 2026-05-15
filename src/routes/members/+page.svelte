@@ -6,7 +6,7 @@
 <h1>Members</h1>
 
 <div class="grid">
-    {#each data.projects as member}
+    {#each data.projects as member (member.memid)}
         <div class="card">
             <h3>{member.firstname} {member.surname}</h3>
             <span>Address: {member.address}</span>
