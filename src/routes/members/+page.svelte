@@ -1,5 +1,7 @@
+<!-- src/routes/members/+page.svelte -->
 <script>
-    // 'data' comes from the load function above
+    import MemberCard from '$lib/components/MemberCard.svelte';
+    
     let { data } = $props(); 
 </script>
 
@@ -7,17 +9,14 @@
 
 <div class="grid">
     {#each data.projects as member (member.memid)}
-        <div class="card">
-            <h3>{member.firstname} {member.surname}</h3>
-            <span>Address: {member.address}</span>
-            <span>Join Date: {member.joindate}</span>
-        </div>
+        <!-- Pass individual properties as props -->
+        <MemberCard 
+            firstname={member.firstname} 
+            surname={member.surname} 
+            address={member.address} 
+            joindate={member.joindate} 
+        />
     {:else}
-        <p>No members found. Time to create one!</p>
+        <p>No members found.</p>
     {/each}
 </div>
-
-<style>
-    .grid { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .card { display: flex; flex-direction: column; border: 1px solid #ccc; padding: 1rem; border-radius: 8px; }
-</style>
