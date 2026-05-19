@@ -60,8 +60,16 @@
                 >
                     Count: {count}
                 </button>
-                {#if count > 0}
+
+                
+                {#if count > 10}
                     <p class="text-gray-600 text-lg">You've clicked <span class="font-bold text-indigo-600">{count}</span> times!</p>
+
+                {:else if count > 5}
+                    <p class="text-gray-600 text-lg">Keep going! You're at <span class="font-bold text-indigo-600">{count}</span>.</p>
+
+                {:else}
+                    <p class="text-gray-600 text-lg">Click the button to increase the count.</p>
                 {/if}
             </div>
         </div>
