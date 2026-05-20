@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import { supabase } from '$lib/supabase';
     import { onMount } from 'svelte';
 
@@ -12,7 +12,7 @@
     let isLoading = $state(false);
     let successMessage = $state('');
     let errorMessage = $state('');
-    let members = $state([]);
+    let members: Array<{memid: number, firstname: string, surname: string}> = $state([]);
     let membersLoading = $state(true);
 
     onMount(async () => {
@@ -54,19 +54,15 @@
         try {
             console.log('Submitting member data:', { firstname, surname, address, zipcode, joindate, telephone, recommendedby_id });
 
-            const insertData = {
+            const insertData: {firstname: string, surname: string, address: string, zipcode: string, joindate: string, telephone: string, recommendedby_id?: number | null} = {
                 firstname: firstname.trim(),
                 surname: surname.trim(),
                 address: address.trim(),
                 zipcode: zipcode.trim(),
                 joindate,
                 telephone: telephone.trim(),
+                recommendedby_id: recommendedby_id || undefined,
             };
-
-            // Only add recommendedby_id if a member was selected (not null)
-            if (recommendedby_id) {
-                insertData.recommendedby_id = recommendedby_id;
-            }
 
             const { data, error } = await supabase
                 .from('management_member')
