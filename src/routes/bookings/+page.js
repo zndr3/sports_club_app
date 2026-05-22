@@ -12,8 +12,8 @@ export async function load() {
 
     if (error) {
         console.error('Fetch error:', error);
-        return { projects: [] };
+        return { bookings: [] };
     }
 
-    return { projects: data };
+    return { bookings:data };
 }

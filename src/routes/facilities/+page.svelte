@@ -12,8 +12,8 @@
 		</div>
 
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-			{#each data.projects as facility (facility.facid)}
-				<FacilityCard data={facility} />
+			{#each data.facilities as facility (facility.facid)}
+				<FacilityCard data = {facility} />
 			{:else}
 				<div class="col-span-full">
 					<div class="bg-green-50 border border-green-200 rounded-lg p-6 text-center">

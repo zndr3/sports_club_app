@@ -1,4 +1,5 @@
 <script>
+	import BookingCard from '$lib/components/BookingCard.svelte';
 	// 'data' comes from the load function above
 	let { data } = $props();
 </script>
@@ -11,35 +12,8 @@
 		</div>
 
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-			{#each data.projects as booking (booking.id)}
-				<div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border-l-4 border-blue-600">
-					<div class="p-6">
-						<div class="flex items-center justify-between mb-4">
-							<h3 class="text-lg font-bold text-gray-900">Booking #{booking.id}</h3>
-							<span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">
-								Active
-							</span>
-						</div>
-						<div class="space-y-3 text-sm">
-							<div class="flex justify-between items-start">
-								<span class="text-gray-600 font-medium">Start Time:</span>
-								<span class="text-gray-900 font-semibold">{booking.starttime}</span>
-							</div>
-							<div class="flex justify-between items-start">
-								<span class="text-gray-600 font-medium">Slot:</span>
-								<span class="text-gray-900 font-semibold">{booking.slots}</span>
-							</div>
-							<div class="flex justify-between items-start">
-								<span class="text-gray-600 font-medium">Member:</span>
-								<span class="text-gray-900 font-semibold">{booking.management_member?.firstname ?? 'N/A'}</span>
-							</div>
-							<div class="flex justify-between items-start border-t pt-3">
-								<span class="text-gray-600 font-medium">Facility:</span>
-								<span class="text-blue-600 font-semibold">{booking.management_facility.name}</span>
-							</div>
-						</div>
-					</div>
-				</div>
+			{#each data.bookings as booking (booking.id)}
+				<BookingCard  data = {booking} />
 			{:else}
 				<div class="col-span-full">
 					<div class="bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">

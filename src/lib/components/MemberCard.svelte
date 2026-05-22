@@ -1,6 +1,6 @@
 <script>
     // Define the custom props this card accepts
-    let data = $props();
+    let { data } = $props();
 </script>
 
 <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border-l-4 border-purple-600">

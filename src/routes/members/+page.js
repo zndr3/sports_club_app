@@ -8,8 +8,8 @@ export async function load() {
 
     if (error) {
         console.error('Fetch error:', error);
-        return { projects: [] };
+        return { members: [] };
     }
 
-    return { projects: data };
+    return { members: data };
 }

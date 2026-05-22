@@ -18,14 +18,9 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {#each data.projects as member (member.memid)}
+            {#each data.members as member (member.memid)}
                 <!-- Pass individual properties as props -->
-                <MemberCard 
-                    firstname={member.firstname} 
-                    surname={member.surname} 
-                    address={member.address} 
-                    joindate={member.joindate} 
-                />
+                <MemberCard data = {member}/>
             {:else}
                 <div class="col-span-full">
                     <div class="bg-purple-50 border border-purple-200 rounded-lg p-6 text-center">
